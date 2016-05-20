@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Computational Logic A & D / PROJECT FIRST SEMESTER 2016 
+%%%%% To prove unicity of answers computed by sorting algrithms, 
+%%%%% it would be just necessary to prove that permutations 
+%%%%% that are either sorted lists or sequences are the same.
+%%%%% 
+%%%%% This works since correctness of sorting algorithms was 
+%%%%% formalized as theorems that state that the computed outputs
+%%%%% are permutations of the inputs that are sorted.
+%%%%%
+%%%    Grupo de Teoria da Computacao, Universidade de Brasilia
+%%%    Flavio L.C. de Moura & M. Ayala-Rincon
+%%%    Last modification:  Mai 8, 2016
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+unicity : THEORY
+
+BEGIN
+
+IMPORTING   sorting_seq, structures@listn[nat]
+
+
+l, l1, l2 : VAR list[nat]
+s, s1, s2 : VAR finite_sequence[nat]
+n : VAR nat
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For simplicity theories related with formalizations of
+% correctness of sorting algorithms are omitted. Instead
+% we define below constants for "quick_sort" and "bubblesort"
+% as well as for "heapsort" and "maxsort" algorithms and state their
+% correctness theorems as axioms. 
+% Correctness proofs of these algorithms, developed by the Group 
+% of Theory of Computation of the UnB, are available in the theory 
+% "sorting" of the NASA Langley PVS library at:
+%          http://shemesh.larc.nasa.gov/fm/ftp/larc/PVS-library
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+quick_sort, bubblesort : [list[nat] -> list[nat]]
+heapsort, maxsort : [finite_sequence[nat] -> finite_sequence[nat]]
+quick_sort_works: AXIOM
+FORALL (l : list[nat]): 
+     is_sorted?(quick_sort(l)) AND permutations(quick_sort(l), l)
+bubblesort_works : AXIOM		 
+FORALL (l: list[nat]):
+     is_sorted?(bubblesort(l)) AND permutations(l, bubblesort(l)) 
+maxsort_works : AXIOM
+FORALL (s : finite_sequence[nat]):
+     sorted(maxsort(s)) AND permutations(s,maxsort(s))
+heapsort_works : AXIOM 
+ FORALL (s : finite_sequence[nat]) : 
+     sorted(heapsort(s)) AND permutations(s, heapsort(s))
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Lemmas below relate lists to finitesequences translations with
+% the list and sequences sorting predicates. 
+
+is_sorted_iff_sorted : LEMMA FORALL(l : list[nat]) :
+  is_sorted?(l) IFF sorted(list2finseq(l))
+
+sorted_iff_is_sorted :LEMMA FORALL(s : finite_sequence[nat]) :
+  sorted(s) IFF is_sorted?(finseq2list(s))
+
+ 
+%%%%%%%%
+%% Question 1:  by induction on lists (induct "l") prove that the
+%% first element of a sorted list is less than or equat to any
+%% other element of the list. 
+%% In addition to induction, you will need to expand operators as
+%% nth, is_sorted? etc.
+%%%%%%%%
+
+min_is_sorted : CONJECTURE  FORALL (l:list[nat], k : below[length(l)]) : 
+       is_sorted?(l) => null?(l) OR nth(l,0) <= nth(l,k)
+
+%% Below a key Corollary used in the proof of unicity of sorted
+%% lists that are permutations. 
+car_sorted_permutations : COROLLARY  FORALL (l1,l2:list[nat]) : 
+       permutations(l1,l2) AND is_sorted?(l1) AND is_sorted?(l2) => 
+           null?(l1) AND null?(l2) OR  car(l1) = car(l2)  
+
+%% In the sequel the two main theorems: permutations that are 
+%% sorted are unique, both for lists and sequences. 
+%% The unicity of sorting algorithms will be obtained directly
+%% since, "correct" sorting algorihtms compute permutations of 
+%% the inputs that are sorted; thus, they compute the same outputs. 
+
+unicity_sorted_lists :THEOREM  FORALL (l1,l2:list[nat]) : 
+            permutations(l1,l2) AND is_sorted?(l1) AND is_sorted?(l2) => 
+                                              l1 = l2 
+
+unicity_sorted_seqs : THEOREM FORALL (s1, s2 : finite_sequence[nat]) :
+            permutations(s1, s2) AND sorted(s1) AND sorted(s2) =>
+                                              s1 = s2
+
+%%%%%%%%
+%% Question 2:  using the unicity main results prove that quick_sort
+%% and bubblesort are functionally equivalent.  You will need 
+%% correctness of quicksort and bubblesort, properties of list 
+%% "permutations" and apply the corresponding unicity main lemma.
+%%%%%%%%
+func_eqQB : CONJECTURE  FORALL (l:list[nat]) : quick_sort(l) = bubblesort(l)
+
+%%%%%%%%
+%% Question 3:  using the unicity main results prove that maxsort
+%% and heapsort are funtionally equivalent. You will need 
+%% correctness of maxsort and heapsort, properties of sequence 
+%% "permutations" and the corresponding unicity main lemma.
+%%%%%%%%
+func_eqMH : CONJECTURE  FORALL (s:finite_sequence[nat]) : maxsort(s) = heapsort(s)
+
+
+%%%%%%%%
+%% Question 4:  this is a more elaborated application of unicity
+%% since quick_sort and maxsort are algorithms that work on 
+%% different data structures (resp. lists and finite sequences).
+%% You will need apply lemmas on correctness of maxsort and 
+%% heapsort, properties of sequence and list "permutations", 
+%% apply the unicity LEMMA, as before. In addition, you
+%% will need properties of the operators list2finseq and 
+%% finseq2list.
+%%%%%%%%
+
+func_eqQM : CONJECTURE FORALL (l:list[nat], s:finite_sequence[nat]) :  
+  list2finseq(l) = s IMPLIES quick_sort(l) = maxsort(s)
+
+
+END unicity
