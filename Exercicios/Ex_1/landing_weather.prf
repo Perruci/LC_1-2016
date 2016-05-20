@@ -1,0 +1,5 @@
+(landing_weather
+ (weath_1 0
+  (weath_1-1 nil 3672136098
+   ("" (lemma "cond_ax1") (("" (postpone) nil nil)) nil) nil shostak)))
+
