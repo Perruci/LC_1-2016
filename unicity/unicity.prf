@@ -86,8 +86,7 @@
     (>= const-decl "bool" reals nil)
     (nat nonempty-type-eq-decl nil naturalnumbers nil)
     (< const-decl "bool" reals nil) (list type-decl nil list_adt nil)
-    (PRED type-eq-decl nil defined_types nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (PRED type-eq-decl nil defined_types nil) nil
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (below type-eq-decl nil nat_types nil)
     (finseq type-eq-decl nil finite_sequences nil)
@@ -107,9 +106,7 @@
     (sorted const-decl "bool" sorting_seq nil)
     (same_nth_fseq_list formula-decl nil sorting_seq nil)
     (finite_sequence type-eq-decl nil finite_sequences nil)
-    (fs2l_l2fs_is_id formula-decl nil sorting_seq nil)
-    (k skolem-const-decl "below[list2finseq(l)`length]" unicity nil)
-    (l skolem-const-decl "list[nat]" unicity nil)
+    (fs2l_l2fs_is_id formula-decl nil sorting_seq nil) nil nil
     (real_lt_is_strict_total_order name-judgement
      "(strict_total_order?[real])" real_props nil)
     (listn_0 name-judgement "listn[nat](0)" sorting_seq nil))
@@ -346,15 +343,11 @@
    ((psorted const-decl "bool" sorting_seq nil)
     (real_lt_is_strict_total_order name-judgement
      "(strict_total_order?[real])" real_props nil)
-    (k skolem-const-decl "below[list2finseq(finseq2list(s))`length]"
-     unicity nil)
-    (s skolem-const-decl "finite_sequence[nat]" unicity nil)
-    (finite_sequence type-eq-decl nil finite_sequences nil)
+    nil nil (finite_sequence type-eq-decl nil finite_sequences nil)
     (list2finseq const-decl "finseq[T]" list2finseq nil)
     (finseq type-eq-decl nil finite_sequences nil)
     (below type-eq-decl nil nat_types nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
     (PRED type-eq-decl nil defined_types nil)
     (list type-decl nil list_adt nil)
     (nat nonempty-type-eq-decl nil naturalnumbers nil)
@@ -391,8 +384,7 @@
     (finseq2list const-decl "list[T]" list2finseq nil)
     (finseq2list_rec def-decl "list[T]" list2finseq nil)
     (sorted const-decl "bool" sorting_seq nil)
-    (is_sorted? const-decl "bool" sorting nil)
-    (k skolem-const-decl "below[length(s)]" unicity nil)
+    (is_sorted? const-decl "bool" sorting nil) nil
     (same_nth_list_fseq formula-decl nil sorting_seq nil)
     (l2fs_fs2l_is_id formula-decl nil sorting_seq nil))
    nil)
@@ -768,8 +760,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (boolean nonempty-type-decl nil booleans nil)
@@ -848,8 +839,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (boolean nonempty-type-decl nil booleans nil)
@@ -1002,15 +992,13 @@
    ((same_occurrences_same_length formula-decl nil sorting nil)
     (posint_plus_nnint_is_posint application-judgement "posint"
      integers nil)
-    (l2 skolem-const-decl "list[nat]" unicity nil)
-    (nth def-decl "T" list_props nil)
+    nil (nth def-decl "T" list_props nil)
     (real_le_is_total_order name-judgement "(total_order?[real])"
      real_props nil)
     (permutations_is_commutative formula-decl nil sorting nil)
     (nnint_plus_posint_is_posint application-judgement "posint"
      integers nil)
-    (below type-eq-decl nil nat_types nil)
-    (l1 skolem-const-decl "list[nat]" unicity nil)
+    (below type-eq-decl nil nat_types nil) nil
     (length def-decl "nat" list_props nil)
     (< const-decl "bool" reals nil)
     (real_lt_is_strict_total_order name-judgement
@@ -1029,8 +1017,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (boolean nonempty-type-decl nil booleans nil)
@@ -1297,17 +1284,11 @@
     (+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
     (below type-eq-decl nil nat_types nil)
     (finseq type-eq-decl nil finite_sequences nil)
-    (list2finseq const-decl "finseq[T]" list2finseq nil)
-    (cons2_var skolem-const-decl "list[nat]" unicity nil)
-    (k skolem-const-decl "below[list2finseq(cons2_var)`length]" unicity
-     nil)
+    (list2finseq const-decl "finseq[T]" list2finseq nil) nil nil
     (real_le_is_total_order name-judgement "(total_order?[real])"
      real_props nil)
-    (int_minus_int_is_int application-judgement "int" integers nil)
-    (k skolem-const-decl "below[list2finseq(cdr(l2))`length]" unicity
-     nil)
-    (cdr adt-accessor-decl "[(cons?) -> list]" list_adt nil)
-    (l2 skolem-const-decl "list[nat]" unicity nil)
+    (int_minus_int_is_int application-judgement "int" integers nil) nil
+    (cdr adt-accessor-decl "[(cons?) -> list]" list_adt nil) nil
     (cons? adt-recognizer-decl "[list -> boolean]" list_adt nil)
     (cons adt-constructor-decl "[[T, list] -> (cons?)]" list_adt nil)
     (null adt-constructor-decl "(null?)" list_adt nil)
@@ -1338,8 +1319,7 @@
     (is_sorted? const-decl "bool" sorting nil)
     (permutations const-decl "bool" sorting nil)
     (IMPLIES const-decl "[bool, bool -> bool]" booleans nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
     (PRED type-eq-decl nil defined_types nil)
     (list type-decl nil list_adt nil))
    nil)
@@ -1649,15 +1629,41 @@
     (list2fseq_lem formula-decl nil sorting_seq nil)
     (finseq2list const-decl "list[T]" list2finseq nil)
     (finseq type-eq-decl nil finite_sequences nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil)
-    (every adt-def-decl "boolean" list_adt nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
     (PRED type-eq-decl nil defined_types nil)
     (list type-decl nil list_adt nil)
     (perm_fsq_iff_perm_list formula-decl nil sorting_seq nil))
    shostak))
  (func_eqQB 0
   (func_eqQB-3 nil 3671202322
-   ("" (skeep) (("" (postpone) nil nil)) nil)
+   ("" (skeep)
+    (("" (lemma quick_sort_works)
+      (("" (lemma bubblesort_works)
+        (("" (lemma car_sorted_permutations)
+          (("" (inst -1 "quick_sort(l)" "bubblesort(l)")
+            (("" (inst -2 l)
+              (("" (inst -3 l)
+                (("" (flatten)
+                  (("" (split)
+                    (("1" (flatten)
+                      (("1" (hide -3 -6)
+                        (("1" (hide -3 -4) (("1" (assert) nil nil))
+                          nil))
+                        nil))
+                      nil)
+                     ("2" (postpone) nil nil)
+                     ("3" (lemma permutations_preserve_contents)
+                      (("3" (postpone) nil nil)) nil)
+                     ("4" (propax) nil nil) ("5" (propax) nil nil))
+                    nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
    ((quick_sort_works formula-decl nil unicity nil)
     (number nonempty-type-decl nil numbers nil)
     (list type-decl nil list_adt nil)
