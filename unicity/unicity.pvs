@@ -120,6 +120,7 @@ func_eqMH : CONJECTURE  FORALL (s:finite_sequence[nat]) : maxsort(s) = heapsort(
 %% finseq2list.
 %%%%%%%%
 
+
 func_eqQM : CONJECTURE FORALL (l:list[nat], s:finite_sequence[nat]) :  
   list2finseq(l) = s IMPLIES quick_sort(l) = maxsort(s)
 
