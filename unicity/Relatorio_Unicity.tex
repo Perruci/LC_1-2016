@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm,
+ }
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{\ Formalizacao de Unicidade de Respostas para Algoritmos de Ordenacao } % Assignment title
+\newcommand{\hmwkDueDate}{Domingo,\ 19\ de Junho\ 2016} % Due date
+\newcommand{\hmwkClass}{Logica Computacional 1\ Turma D} % Course/class
+\newcommand{\hmwkClassTime}{} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Flavio L. C. Moura} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Lucas M. Chagas (12/0126643) e Pedro Henrique S. Perruci (14/0158596)} % Your name
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Introdução}
+
+Neste projeto utilizamos o assistente de demonstração PVS para formalizar propriedades da unicidade de respostas para algoritmos de ordenação. 
+Nos foi dado os arquivos unicity.pvs, unicity.prf, sorting.pvs, sorting.prf, sorting_seq.pvs e sorting_seq.prf, que continham as quatro quetões a serem formalizadas nesse projeto e outras propriedades auxiliares já formalizadas.
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Questão 1}
+
+Nesta questão, provamos que o primeiro elemento de uma lista sorteada  é menor ou igual a qualquer elemento da lista:
+\\
+\\
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Questão 2}
+
+Nesta questão, provamos que quick\_sort e bubblesort são funcionalmente equivalentes, utilizando os principais resultados da unicidade :\\
+\\
+\\
+\textit{
+func\_eqQB :  CONJECTURE\\
+FORALL (l: list[nat]) :\\
+ quick\_sort(l) = bubblesort(l)\\
+}
+\\
+Para formalizar, usamos os lemas "quick\_sort\_works",\\
+"bubblesort\_works" e "unicity\_sorted\_lists".\\
+\\
+Instanciamos na fórmula -1 quick\_sort(l) e bubblesort(l) para verificar a permutação \\
+entre quick\_sort(l) e bubblesort(l) e verificar se as listas são sorteadas.\\
+
+Primeiramente, dividimos a conjunção em 4 subárvores. 3 dos 4 itens são triviais. \\
+\\
+No caso onde não é trivial, tivemos que provar que as permutações de l, bubblesort(l) e quick\_sort(l), l são transitivas. \\
+\\
+
+Para provar isso, tivemos que chamar o lemma "permutations\_is\_transitive".\\
+
+
+Instanciamos na fórmula -1 quick\_sort(l), l e bubblesort(l), onde chegamos em três subárvores, todas sendo trivias, completando a prova. \\
+
+\\
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Questão 3}
+
+Na questão 3, assim como na questão 2, provamos que maxsort e heapsort são funcionalmente equivalentes, utilizando os principais resultados da unicidade :\\
+\\
+\textit{
+	func\_eqQB :  CONJECTURE\\
+	FORALL (s: finite_sequence[nat]) :\\
+	maxosrt(s) = heapsort(s)\\
+}
+\\
+Para formalizar, usamos os lemas "maxsort\_works",\\
+"heapsort\_works" e "unicity\_sorted\_seqs".\\
+Instanciamos na fórmula -1 maxsort(s) e heapsort(s) para verificar a permutação \\
+entre maxsort(s) e heapsort(s) e verificar se as listas são sorteadas.
+\\
+Primeiramente, dividimos a conjunção em 4 subárvores. 3 dos 4 itens são triviais. \\
+\\
+No caso onde não é trivial, tivemos que provar que as permutações de s, maxsort(s) e s, heapsort(s) são transitivas e que a permutação(s, maxsort(s)) e permutação (maxsort(s),s) é simétrico. \\
+\\
+
+Para provar isso, tivemos que chamar o lemma "permutations\_equiv".\\
+\\
+
+Tivemos que expandir a fórmula de symmetric para verificar a simetria da permutação s, maxsort(s). Obtemos, assim, a simetria da permutação(s, maxsort(s)) e permutação(maxsort(s), s) \\
+\\
+
+Também expandimos a fórmula de transitive para verificar a transitividade entre a permutação(maxsort(s), s) e permutação (s, heapsort(s)).\\
+Com a expansão, dividimos a conjunção e assim chegamos na conclusão da prova.\\
+\\ 
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{Questão 4}
+
+A questão pedia para provarmos que a unicidade entre as funções quick\_sort e maxsort :\\
+\\
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+\section{Conclusão}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+
+
+\end{document}
