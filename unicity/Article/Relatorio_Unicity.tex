@@ -7,7 +7,7 @@
 % http://www.LaTeXTemplates.com
 %
 % Original author:
-% Linux and Unix Users Group at Virginia Tech Wiki 
+% Linux and Unix Users Group at Virginia Tech Wiki
 % (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
 %
 % License:
@@ -26,7 +26,7 @@
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{natbib} % Required to change bibliography style to APA
-\usepackage{amsmath} % Required for some math elements 
+\usepackage{amsmath} % Required for some math elements
 \usepackage{geometry}
  \geometry{
  a4paper,
@@ -45,7 +45,8 @@
 %----------------------------------------------------------------------------------------
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
-
+\begin{document}
+  
 \newcommand{\hmwkTitle}{\ Formalizacao de Unicidade de Respostas para Algoritmos de Ordenacao } % Assignment title
 \newcommand{\hmwkDueDate}{Domingo,\ 19\ de Junho\ 2016} % Due date
 \newcommand{\hmwkClass}{Logica Computacional 1\ Turma D} % Course/class
@@ -53,18 +54,13 @@
 \newcommand{\hmwkClassInstructor}{Flavio L. C. Moura} % Teacher/lecturer
 \newcommand{\hmwkAuthorName}{Lucas M. Chagas (12/0126643) e Pedro Henrique S. Perruci (14/0158596)} % Your name
 
-% If you wish to include an abstract, uncomment the lines below
-% \begin{abstract}
-% Abstract text
-% \end{abstract}
-
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
 \section{Introdução}
 
-Neste projeto utilizamos o assistente de demonstração PVS para formalizar propriedades da unicidade de respostas para algoritmos de ordenação. 
+Neste projeto utilizamos o assistente de demonstração PVS para formalizar propriedades da unicidade de respostas para algoritmos de ordenação.
 Nos foi dado os arquivos unicity.pvs, unicity.prf, sorting.pvs, sorting.prf, sorting_seq.pvs e sorting_seq.prf, que continham as quatro quetões a serem formalizadas nesse projeto e outras propriedades auxiliares já formalizadas.
 
 
@@ -144,7 +140,7 @@ Tivemos que expandir a fórmula de symmetric para verificar a simetria da permut
 
 Também expandimos a fórmula de transitive para verificar a transitividade entre a permutação(maxsort(s), s) e permutação (s, heapsort(s)).\\
 Com a expansão, dividimos a conjunção e assim chegamos na conclusão da prova.\\
-\\ 
+\\
 
 
 
