@@ -216,7 +216,8 @@ paragraph{}
 \begin_layout Standard
 A primeira questão do projeto consiste em demonstrar que o primeiro elemento
  de listas ordenadas é mínimo.
- Sua conjectura encontra-se expressa abaixo.
+ Sua conjectura encontra-se expressa abaixo, no Algorithm 1.
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -263,6 +264,327 @@ Conjectura da Questão 1.
 Solução Proposta
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $induct$
+\end_inset
+
+(
+\begin_inset Quotes eld
+\end_inset
+
+l
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir da indução na estrutura da lista l, a solução separa-se em dois
+ ramos: base de indução e passo indutivo.
+ A primeira resolve-se trivialmente, uma vez que a função de ordenação retorna
+ verdadeiro para listas vazias.
+ Por outro lado, o passo indutivo demanda demonstrar que, sabendo que o
+ primeiro termo de uma lista 
+\begin_inset Formula $L$
+\end_inset
+
+ é mínimo, mostrar que a propriedade se matêm quando adiciona-se um termo
+ qualquer a 
+\begin_inset Formula $L$
+\end_inset
+
+, sabendo que a lista resultante é ordenada.
+ O sequênte resultante está expresso abaixo: 
+\end_layout
+
+\begin_layout LyX-Code
+FORALL (j: below(length[L]):
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+is_sorted(L) => null?(L) OR nth(L, 0) <= nth(L, j)
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+|— — — — —
+\end_layout
+
+\begin_layout LyX-Code
+FORALL (k: below(length[cons(L, a : nat]):
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+is_sorted(cons(L, a : nat)) => null?(cons(L, a : nat)) OR 
+\end_layout
+
+\begin_layout LyX-Code
+nth(cons(L, a : nat), 0) <= nth(cons(L, a : nat), k)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $induct$
+\end_inset
+
+(
+\begin_inset Quotes eld
+\end_inset
+
+k
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resolve-se, então, realizar indução também na variável de contagem 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ Note que sua função é servir como iterador para representar todos os n-ésimos
+ valores da lista 
+\begin_inset Formula $cons(L,a)$
+\end_inset
+
+.
+ Logo, induzir este parâmetro significa mostrar que a propriedade é válida
+ para a base indutiva 
+\begin_inset Formula $k=0$
+\end_inset
+
+ e, assumindo ser válida para 
+\begin_inset Formula $k=jb$
+\end_inset
+
+, deve valer para 
+\begin_inset Formula $jb+1$
+\end_inset
+
+.
+ Novamente, resolver para a base de indução é trivial.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+( 
+\begin_inset Formula $k=jb+1$
+\end_inset
+
+ ) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para solucionar o passo indutivo, decide-se instanciar 
+\begin_inset Formula $k\text{ com o valor }jb+1$
+\end_inset
+
+ e, assim, representar de forma equivalente os sequentes e consequentes.
+ Esse passo dividiu a solução em diversos ramos.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $split$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Utilizou-se o comando 
+\begin_inset Formula $(split)$
+\end_inset
+
+ para separar as implicações dos sequentes nos consequêntes.
+ Os termos de cada sequente e consequente ficaram bem simplificados, no
+ entanto, ampliou-se ainda mais a quantidade de ramos na demonstração.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $expand$
+\end_inset
+
+ is_sorted? e 
+\begin_inset Formula $inst$
+\end_inset
+
+( k = jb )
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cada um dos ramos de prova que foram encontrados tinham uma característica
+ em comum: poderiam ser solucionados expandindo a definição de lista ordenada
+ e instanciando sua variável de contagem com o termo jb.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $expand$
+\end_inset
+
+ length e 
+\begin_inset Formula $expand$
+\end_inset
+
+ list2finseq[nat]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por meio da expansão e simplificação destes dois termos, todos os ramos
+ foram solucionados com sucesso.
+ Acabava necessário a chamada do comando 
+\begin_inset Formula $assert$
+\end_inset
+
+ para validar as duas situações encontradas abaixo.
+\end_layout
+
+\begin_layout LyX-Code
+[-1] jb < length(L)
+\end_layout
+
+\begin_layout LyX-Code
+|— — — — —
+\end_layout
+
+\begin_layout LyX-Code
+[1] jb <= length(L) - 1
+\end_layout
+
+\begin_layout Subsection
+Considerações
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A demonstração foi realizada com sucesso.
+ Contudo, acredita-se que existam soluções mais simples para o problema
+ — uma vez que axiomas muito semelhantes foram encontrados na solução dos
+ diversos ramos.
+ Recomenda-se a aventureiros futuros tentar simplificar a solução aqui constatad
+a.
+\end_layout
+
 \begin_layout LyX-Code
 \begin_inset Float figure
 placement p
@@ -287,7 +609,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Árvore e prova referente à Question 2
+Árvore e prova referente à Questão 2.
+ Foi necessário rotacionar seu sentido para a leitura no formato A4.
 \end_layout
 
 \end_inset
