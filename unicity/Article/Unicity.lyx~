@@ -530,12 +530,13 @@ Tivemos que expandir a fórmula de symmetric para verificar a simetria da
 \end_layout
 
 \begin_layout Standard
-Expandimos também a fórmula de transitive para verificar a transitividade
+Também expandimos a fórmula de transitive para verificar a transitividade
  entre a permutação(maxsort(s), s) e permutação (s, heapsort(s)).
-\end_layout
+\backslash
 
-\begin_layout Standard
-Com a expansão, dividimos a conjunção e assim chegamos na conclusão da prova.
+\backslash
+ Com a expansão, dividimos a conjunção e assim chegamos na conclusão da
+ prova.
 \end_layout
 
 \begin_layout LyX-Code
