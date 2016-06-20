@@ -782,21 +782,21 @@ Para formalizar, usamos os lemas "quick_sort_works", "bubblesort_works"
 \begin_inset Formula $inst$
 \end_inset
 
- - 1 (quicksort(l) bubblesort(l) l)
+ (quicksort(l) bubblesort(l) l)
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $inst$
 \end_inset
 
- - 2 (l)
+ (l)
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $inst$
 \end_inset
 
- - 3 (l)
+ (l)
 \end_layout
 
 \begin_layout Standard
@@ -1023,6 +1023,29 @@ Questão 3
 Especificação do Problema
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na questão 3, assim como na questão 2, provamos que maxsort(s) e heapsort(s)
+ são funcionalmente equivalentes, utilizando os principais resultados da
+ unicidade.
+ Sua conjectura encontra-se expressa abaixo, no Algorithm 3.
+\end_layout
+
 \begin_layout LyX-Code
 \begin_inset Float algorithm
 placement H
@@ -1063,6 +1086,51 @@ Conjectura da Questão 3.
 Solução Proposta
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+maxsort_works
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+heapsort_works
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+unicity_sorted_seqs
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -1080,17 +1148,74 @@ paragraph{}
 \end_layout
 
 \begin_layout Standard
-Na questão 3, assim como na questão 2, provamos que maxsort e heapsort são
- funcionalmente equivalentes, utilizando os principais resultados da unicidade
- Para formalizar, usamos os lemas "maxsort_works", "heapsort_works" e "unicity_s
-orted_seqs".
+Para formalizar, usamos os lemas "maxsort_works", "heapsort_works" e "unicity_so
+rted_seqs".
  
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ (maxsort(s) heapsort(s) s)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ (s)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ (s)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Instanciamos na fórmula -1 maxsort(s) e heapsort(s) para verificar a permutação
  entre maxsort(s) e heapsort(s) e verificar se as listas são sorteadas.
- 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $split$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1102,8 +1227,70 @@ Primeiramente, dividimos a conjunção em 4 subárvores.
  
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+permutations_equiv
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Para provar isso, tivemos que chamar o lemma "permutations_equiv".
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $expand$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+symmetric
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1113,6 +1300,37 @@ Tivemos que expandir a fórmula de symmetric para verificar a simetria da
 , s).
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $expand$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+transitive
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Expandimos também a fórmula de transitive para verificar a transitividade
  entre a permutação(maxsort(s), s) e permutação (s, heapsort(s)).
@@ -1120,6 +1338,31 @@ Expandimos também a fórmula de transitive para verificar a transitividade
 
 \begin_layout Standard
 Com a expansão, dividimos a conjunção e assim chegamos na conclusão da prova.
+\end_layout
+
+\begin_layout Subsection
+Considerações
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assim como na questão 2, foram utilizados principios da Álgebra, transitividade
+ e simetria, para resolver a questão.
 \end_layout
 
 \begin_layout LyX-Code

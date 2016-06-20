@@ -958,7 +958,9 @@ paragraph{}
 \end_layout
 
 \begin_layout Standard
-Foi utilizado alguns conceitos da Álgebra Relacional, co
+Foi utilizado alguns conceitos da Álgebra, como a transitividade, para resolver
+ a questão.
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -966,7 +968,7 @@ Foi utilizado alguns conceitos da Álgebra Relacional, co
 placement p
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1021,6 +1023,29 @@ Questão 3
 Especificação do Problema
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na questão 3, assim como na questão 2, provamos que maxsort(s) e heapsort(s)
+ são funcionalmente equivalentes, utilizando os principais resultados da
+ unicidade.
+ Sua conjectura encontra-se expressa abaixo, no Algorithm 3.
+\end_layout
+
 \begin_layout LyX-Code
 \begin_inset Float algorithm
 placement H
@@ -1061,6 +1086,51 @@ Conjectura da Questão 3.
 Solução Proposta
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+maxsort_works
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+heapsort_works
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+unicity_sorted_seqs
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -1078,11 +1148,16 @@ paragraph{}
 \end_layout
 
 \begin_layout Standard
-Na questão 3, assim como na questão 2, provamos que maxsort e heapsort são
- funcionalmente equivalentes, utilizando os principais resultados da unicidade
- Para formalizar, usamos os lemas "maxsort_works", "heapsort_works" e "unicity_s
-orted_seqs".
+Para formalizar, usamos os lemas "maxsort_works", "heapsort_works" e "unicity_so
+rted_seqs".
  
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1125,7 +1200,7 @@ Com a expansão, dividimos a conjunção e assim chegamos na conclusão da prova
 placement p
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1251,6 +1326,10 @@ Conjectura da Questão 4
 
 \end_layout
 
+\begin_layout LyX-Code
+
+\end_layout
+
 \begin_layout Subsection
 Solução Proposta
 \end_layout
@@ -1301,6 +1380,22 @@ status collapsed
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{}
 \end_layout
 
 \end_inset
