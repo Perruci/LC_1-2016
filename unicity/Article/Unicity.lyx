@@ -23,7 +23,7 @@
 \font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -623,12 +623,52 @@ status collapsed
 
 \end_layout
 
+\begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Questão 2
 \end_layout
 
 \begin_layout Subsection
 Especificação do Problema
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A segunda questão do projeto consiste em demonstrar que quick_sort(l) e
+ bubblesort(l) são funcionalmente equivalentes, utilizando os principais
+ resultados da unicidade.
+ Sua conjectura encontra-se expressa abaixo, no Algorithm 2.
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -671,6 +711,51 @@ Conjectura da Questão 2.
 Solução Proposta
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+quick_sort_works
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+bubblesort_works
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+unicity_sorted_lists
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -688,34 +773,194 @@ paragraph{}
 \end_layout
 
 \begin_layout Standard
-Nesta questão, provamos que quick_sort e bubblesort são funcionalmente equivalen
-tes, utilizando os principais resultados da unicidade.
- Para formalizar, usamos os lemas "quick_sort_works", "bubblesort_works"
+Para formalizar, usamos os lemas "quick_sort_works", "bubblesort_works"
  e "unicity_sorted_lists".
  
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ - 1 (quicksort(l) bubblesort(l) l)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ - 2 (l)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ - 3 (l)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Instanciamos na fórmula -1 quick_sort(l) e bubblesort(l) para verificar
  a permutação entre quick_sort(l) e bubblesort(l) e verificar se as listas
  são sorteadas.
+ Na fórmula -2 e -3 foi instanciado l para que possamos validar o que foi
+ levantado pela fórmula -1.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $split$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Primeiramente, dividimos a conjunção em 4 subárvores.
- 3 dos 4 itens são triviais.
- No caso onde não é trivial, tivemos que provar que as permutações de l,
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Primeiramente, dividimos a conjunção em 4 subárvores, sendo que 3 dos 4
+ itens são trivialmente verdade.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No caso onde não é trivial, tivemos que provar que as permutações de l,
  bubblesort(l) e quick_sort(l), l são transitivas.
  
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+permutations_is_transitive
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Para provar isso, tivemos que chamar o lemma "permutations_is_transitive".
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ (quick_sort(l) l bubblesort(l))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Instanciamos na fórmula -1 quick_sort(l), l e bubblesort(l), onde chegamos
  em três subárvores, sendo todas trivias, completando a prova.
+\end_layout
+
+\begin_layout Subsection
+Considerações
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Foi utilizado alguns conceitos da Álgebra, como a transitividade, para resolver
+ a questão.
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -747,6 +992,22 @@ status collapsed
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{}
 \end_layout
 
 \end_inset
@@ -898,6 +1159,22 @@ status collapsed
 \end_layout
 
 \begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 
 \end_layout
 
@@ -976,6 +1253,10 @@ Conjectura da Questão 4
 
 \end_layout
 
+\begin_layout LyX-Code
+
+\end_layout
+
 \begin_layout Subsection
 Solução Proposta
 \end_layout
@@ -1026,6 +1307,22 @@ status collapsed
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{}
 \end_layout
 
 \end_inset

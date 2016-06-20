@@ -958,9 +958,7 @@ paragraph{}
 \end_layout
 
 \begin_layout Standard
-Foi utilizado alguns conceitos da Álgebra, como a transitividade, para resolver
- a questão.
- 
+Foi utilizado alguns conceitos da Álgebra Relacional, co
 \end_layout
 
 \begin_layout LyX-Code
@@ -968,7 +966,7 @@ Foi utilizado alguns conceitos da Álgebra, como a transitividade, para resolver
 placement p
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1253,10 +1251,6 @@ Conjectura da Questão 4
 
 \end_layout
 
-\begin_layout LyX-Code
-
-\end_layout
-
 \begin_layout Subsection
 Solução Proposta
 \end_layout
@@ -1307,22 +1301,6 @@ status collapsed
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout LyX-Code
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage{]
 \end_layout
 
 \end_inset
