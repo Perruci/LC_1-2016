@@ -586,40 +586,6 @@ a.
 \end_layout
 
 \begin_layout LyX-Code
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Solutions/unicity_min_is_sorted.ps
-	width 100text%
-	height 100theight%
-	rotateAngle 90
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Árvore e prova referente à Questão 2.
- Foi necessário rotacionar seu sentido para a leitura no formato A4.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -964,38 +930,6 @@ Foi utilizado alguns conceitos da Álgebra, como a transitividade, para resolver
 \end_layout
 
 \begin_layout LyX-Code
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Solutions/unicity_func_eqQB.ps
-	width 100text%
-	height 100theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Árvore e prova referente à Question 2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -1366,38 +1300,6 @@ Assim como na questão 2, foram utilizados principios da Álgebra, transitividad
 \end_layout
 
 \begin_layout LyX-Code
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Solutions/unicity_func_eqMH.ps
-	width 100text%
-	height 100theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Árvore e prova referente à Question 3
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -1446,8 +1348,19 @@ paragraph{}
 \end_layout
 
 \begin_layout Standard
-A questão pedia para provarmos que a unicidade entre as funções quick_sort
- e maxsort.
+A questão 4 consiste em demonstrar a unicidade de resultados entre as funções
+ quick_sort e maxsort — a primeira elaborada para listas e a segunda para
+ sequências finitas.
+ utilizar bem as transformações 
+\begin_inset Formula $list2finseq$
+\end_inset
+
+ e 
+\begin_inset Formula $finseq2list$
+\end_inset
+
+ e suas prpriedades será fundamental para a prova.
+ A conjectura para a questão encontra-se expressa abaixo.
 \end_layout
 
 \begin_layout LyX-Code
@@ -1455,7 +1368,7 @@ A questão pedia para provarmos que a unicidade entre as funções quick_sort
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 func_eqQM : 
@@ -1496,10 +1409,6 @@ Conjectura da Questão 4
 
 \end_layout
 
-\begin_layout LyX-Code
-
-\end_layout
-
 \begin_layout Subsection
 Solução Proposta
 \end_layout
@@ -1520,31 +1429,178 @@ paragraph{}
 
 \end_layout
 
+\begin_layout Standard
+O sequente da conjectura pode ser simplificado pela chamada do comando 
+\begin_inset Formula $(skeep)$
+\end_inset
+
+.
+ Fica então, mais explícita a situação de nossa prova.
+\end_layout
+
 \begin_layout LyX-Code
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
+[-1] list2finseq(l) = s
+\end_layout
+
+\begin_layout LyX-Code
+|— — — — —
+\end_layout
+
+\begin_layout LyX-Code
+[1] list2finseq( quick_sort(l) ) = maxsort(s)
+\end_layout
+
+\begin_layout Standard
+A solução encontrada pode ser dividida em três etapas principais.
+ Seu detalhamento, será feito nas subseções logo em seguida.
+\end_layout
+
+\begin_layout Enumerate
+Mostrar que ambos os métodos de ordenação são funcionais;
+\end_layout
+
+\begin_layout Enumerate
+Provar a unicidade entre os métodos, de forma semelhante a realizada nas
+ questões 2 e 3;
+\end_layout
+
+\begin_layout Enumerate
+Concluir sua equivalência por meio das propriedades de transformações de
+ tipos abstratos.
+\end_layout
+
+\begin_layout Subsubsection
+Parte 1 — Mostrar que ambos os métodos de ordenação são funcionais
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ quick_sort_works, 
+\begin_inset Formula $inst$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+l
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ maxsort_works, 
+\begin_inset Formula $inst$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+s
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ is_sorted_iff_sorted, 
+\begin_inset Formula $inst$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+quick_sort(l)
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Solutions/unicity_func_eqQM.ps
-	width 100text%
-	height 100theight%
-	rotateOrigin leftBottom
+
+
+\backslash
+paragraph{}
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
+\begin_layout Standard
+O objetivo principal dessa etapa é reunir sequentes valiosos para a demonstração
+ a partir da funcionalidade dos métodos de ordenação.
+ Para tanto, é necessário convocar os lemas expressos acima.
+ O último deles, 
+\emph on
+is_sorted_iff_sorted
+\emph default
+, garante que se uma lista é ordenada, sua sequência equivalente também
+ encontra-se ordenada.
+\end_layout
+
+\begin_layout Subsubsection
+Parte 2 — Provar a unicidade entre os métodos
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ unicity_sorted_seqs
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+( 
+\begin_inset Quotes eld
+\end_inset
+
+list2finseq( quick_sort(l)
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+maxsort(s)
+\begin_inset Quotes erd
+\end_inset
+
+ )
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-Árvore e prova referente à Question 4
+
+
+\backslash
+paragraph{}
 \end_layout
 
 \end_inset
@@ -1552,9 +1608,293 @@ status collapsed
 
 \end_layout
 
+\begin_layout Standard
+Semelhantemente ao realizado nas questões 2 e 3, realizou-se a chamada do
+ lema da unicidade em sequências.
+ Instanciá-los nos termos das estruturas ordenadas quick_sort(l) e maxsort(s)
+ foi essencial para encontrar sub-árvores triviais e encaminhar bem a demonstraç
+ão.
+ Em seguida, resta-nos provar que os mesmos elementos constam na lista ordenada
+ e sua sequência correspondente ordenado.
+ O sequente em seguida expressa tal situação:
+\end_layout
+
+\begin_layout LyX-Code
+[-1] permutations( s, maxsort(s) )
+\end_layout
+
+\begin_layout LyX-Code
+[-2] permutations( quick_sort(l), l )
+\end_layout
+
+\begin_layout LyX-Code
+[-3] list2finseq(l) = s
+\end_layout
+
+\begin_layout LyX-Code
+|— — — — —
+\end_layout
+
+\begin_layout LyX-Code
+[1] permutations( list2fiseq( quicksort(l) ), maxsort(s) )
+\end_layout
+
+\begin_layout LyX-Code
+[2] list2finseq( quick_sort(l) ) = maxsort(s) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ permutations_equiv
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $expand$
+\end_inset
+
+ transitive?
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+list2finseq( quick_sort(l) )
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+list2finseq( l )
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+maxsort(s)
+\begin_inset Quotes erd
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A propriedade de transitividade de sequências é convocada para mostrar que
+ permutação dos termos [-1], [-2], associados à [-3], equivalem à permutação
+ [1].
+ Foi instanciada de forma a obter soluções triviais para sub-árvores.
+ Resta-nos provar o seguinte sequente para concluir a prova:
+\end_layout
+
+\begin_layout LyX-Code
+[-1] permutations( quick_sort(l), l )
+\end_layout
+
+\begin_layout LyX-Code
+|— — — — —
+\end_layout
+
+\begin_layout LyX-Code
+[1] permutations( list2fiseq( quicksort(l) ), list2fiseq( l ) 
+\end_layout
+
+\begin_layout Subsubsection
+Parte 3 — Concluir equivalência por meio das propriedades de transformações
+ de tipos abstratos
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ perm_fsq_iff_perm_list
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $inst$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+quick_sort(l)
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+l
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+É evidente nossa prova já está praticamente concluída.
+ A última alteração nessesária é mostrar que a transformação 
+\emph on
+list2finseq
+\emph default
+ não interfere na permutação de seus elementos, representada pelo lema convocado.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ fs2l_l2fs_is_id, 
+\begin_inset Formula $inst$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+l
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $lemma$
+\end_inset
+
+ fs2l_l2fs_is_id, 
+\begin_inset Formula $inst$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+quick_sort(l)
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por fim, a dupla chamada desse lema prova a equivalência das transformações
+ 
+\emph on
+list2finseq 
+\emph default
+e
+\emph on
+ finseq2list
+\emph default
+, que acabam resultando da instanciação do lema do item anterior.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $flatten$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $split$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $assert$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+paragraph{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A prova é finalmente concluída a partir da simplificação dos lemas convocados
+ e uma chamada do comando 
+\begin_inset Formula $(assert)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout LyX-Code
@@ -1570,6 +1910,14 @@ clearpage{}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
 
 \end_layout
 
