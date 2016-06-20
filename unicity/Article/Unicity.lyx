@@ -1941,5 +1941,22 @@ paragraph{}
 
 \end_layout
 
+\begin_layout Standard
+Neste projeto, demostramos que o primeiro elemento de listas ordenadas é
+ mínimo, provamos que quick_sort(l) e bubblesort(l) são funcionalmente equivalen
+tes, provamos também que maxsort(s) e heapsort(s) são funcionalmente equivalente
+s, e demonstramos a unicidade de resultados entre as funções quick_sort
+ e maxsort — a primeira elaborada para listas e a segunda para sequências
+ finitas.
+\end_layout
+
+\begin_layout Standard
+Com a realização do projeto, pudemos, com sucesso, verificar a unicidade
+ entre os algoritmos de ordenação.
+ Foi possível observar as equivalências entre os diversos comandos do PVS
+ com as regras do cálculo de sequêntes que vimos no decorrer da disciplina.
+ 
+\end_layout
+
 \end_body
 \end_document
